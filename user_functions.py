@@ -11,13 +11,13 @@ def build_sidebar(titleHref, titleName, overviewHref, overviewName, overviewIcon
 	#unit view must have smaller width
 	if(smallWidth):
 		sidebarButtons+= """id=\"unit\""""
-	sidebarButtons+="""><div class="logo-details"><div class="logo_name">
-	<i class='bx bx-home-smile'></i> </div> """
+	sidebarButtons+="""> """
 
-	sidebarButtons += """ <a href=""" + titleHref +""" class="logo_name">""" + titleName + """</a> <!--NAME-->
-			<i class='bx bx-chevron-right' id="btn" ></i>
-			</div>
-			
+	sidebarButtons += """
+		<li><a href= " index.html" aria-label="Go to Home "><i class='bx bx-home-smile'></i><span class="links_name"> Home</span></a><span class="tooltip"> Home</span></li>
+	"""
+
+	sidebarButtons += """
 			<ul class="nav-list">
 			
 			<li>
@@ -184,6 +184,8 @@ def secondaryUnitBoxes():
 	#content for the non-mobile secondary unit sidebar (will have all of the weeks)
 	secondaryUnitButtonsContent = """<div class="sidebar secondary"id="unit2" style="margin-left: 78px; width: 70px">
 			<ul class="nav-list" style="margin-top: 100px"> """
+	
+
 
 	for i in range(0,len(unitData)):
 		secondaryUnitButtonsContent += "<li>"
@@ -223,7 +225,7 @@ for element in sidebarButtonsUnitData:
 	sidebarUnitButtonsContent += """<span class="links_name"> """ + name + """</span>"""
 	sidebarUnitButtonsContent += "</a>"
 	sidebarUnitButtonsContent += """<span class="tooltip"> """ + name + """</span>"""
-	sidebarUnitButtonsContent += "</li>"
+	sidebarUnitButtonsContent += "</li>\n"
 
 sidebars = {
 	'application': build_sidebar("index.html", websiteData['Global Class Name'], "overview_application.html", "Overview", "'bx bxs-shapes'", appButtonsContent,bool(False)),
