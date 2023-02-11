@@ -6,6 +6,7 @@ from create_zip import *
 # returns unit_settings JSON file as a dictionary
 appData = json.loads(open("applications.json").read())
 
+
 for (k,v) in appData.items():
     #extract and format all PDFs and associated buttons
     file = k.replace(" ", "-").lower()
